@@ -193,7 +193,7 @@ Nᴀᴍᴇ - {}"""
     CAPTION = """
 <b>📂 Fɪʟᴇ ɴᴀᴍᴇ : </b> <code>{file_caption}</code>
 
-<b>💢 Upload By [@primax_movie]</b>"""
+<b>💢 Upload By [@bingeplix]</b>"""
 
     IMDB_TEMPLATE_TXT = """
 <b>🏷 Title: <a href={url}>{title}</a>
