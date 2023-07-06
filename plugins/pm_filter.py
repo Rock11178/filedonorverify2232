@@ -68,7 +68,7 @@ async def give_filter(client, message):
 #    content = message.text
 #    user = message.from_user.first_name
 #    user_id = message.from_user.id
-#    if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
+#      # ignore commands and hashtags
 #    if user_id in ADMINS: return # ignore admins
 #    await message.reply_text("<b>dont ask here add me to your group !</b>")
 #    await bot.send_message(
@@ -78,17 +78,7 @@ async def give_filter(client, message):
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pv_filter(client, message):
-    if AUTH_CHANNEL and not await is_subscribed(client, query):
-        invite_link = await bot.create_chat_invite_link(int(AUTH_CHANNEL))
-        btn = [[
-                InlineKeyboardButton("❆ Jᴏɪɴ Oᴜʀ Bᴀᴄᴋ-Uᴘ Cʜᴀɴɴᴇʟ ❆", url=invite_link.invite_link)
-            ]]
-        await client.send_message(
-            chat_id=userid,
-            text="**Yᴏᴜ ᴀʀᴇ ɴᴏᴛ ɪɴ ᴏᴜʀ Bᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ ɢɪᴠᴇɴ ʙᴇʟᴏᴡ sᴏ ʏᴏᴜ ᴅᴏɴ'ᴛ ɢᴇᴛ ᴛʜᴇ ᴍᴏᴠɪᴇ ғɪʟᴇ...\n\nIғ ʏᴏᴜ ᴡᴀɴᴛ ᴛʜᴇ ᴍᴏᴠɪᴇ ғɪʟᴇ, ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ '❆ Jᴏɪɴ Oᴜʀ Bᴀᴄᴋ-Uᴘ Cʜᴀɴɴᴇʟ ❆' ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ᴀɴᴅ ᴊᴏɪɴ ᴏᴜʀ ʙᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ, ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ '↻ Tʀʏ Aɢᴀɪɴ' ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ...\n\nTʜᴇɴ ʏᴏᴜ ᴡɪʟʟ ɢᴇᴛ ᴛʜᴇ ᴍᴏᴠɪᴇ ғɪʟᴇs...**",
-            reply_markup=InlineKeyboardMarkup(btn),
-            parse_mode=enums.ParseMode.MARKDOWN
-            )
+    if content.startswith("/") or content.startswith("#"): 
         return
     kd = await global_filters(client, message)
     if kd == False:
