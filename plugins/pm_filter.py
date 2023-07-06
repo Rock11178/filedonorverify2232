@@ -78,6 +78,7 @@ async def give_filter(client, message):
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pv_filter(client, message):
+    content = message.text
     if content.startswith("/") or content.startswith("#"): 
         return
     kd = await global_filters(client, message)
